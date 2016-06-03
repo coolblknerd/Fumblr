@@ -1,7 +1,7 @@
-<h1>Posts#show</h1>
+<h1><%= @post.title %></h1>
 
-<h2><%= @post.title %></h2>
-
-<h5><%= time_ago_in_words(@post.created_at) %> ago </h5>
+<h5 id="date">
+  <%= time_ago_in_words(@post.created_at) %> ago... | <%= link_to "Edit", edit_post_path %> | <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?"} %>
+</h5>
 
 <p><%= @post.body %> </p>

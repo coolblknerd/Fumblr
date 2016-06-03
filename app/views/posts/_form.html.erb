@@ -1,7 +1,17 @@
-<div class="col-xs-6 col-xs-offset-3" id="post-form">
+<div class="col-xs-6" id="post-form">
 
 <%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <div id="errors">
+      <h2><%= pluralize(@post.errors.count, 'error') %> stopped this post from saving.</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
 
+  <% end %>
   <div class="form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
