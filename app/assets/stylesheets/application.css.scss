@@ -1,0 +1,63 @@
+/*
+*= require_self
+*/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'normalize';
+
+/* ----------- Universal ------------- */
+
+#wrapper {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+/* -------------- Sidebar ---------------*/
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0px;
+  display: block;
+  padding: 20px;
+  height: 100%;
+  margin-bottom: 250px;
+  background-color: #58C9B9;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  ul {
+    padding-top: 100px;
+  }
+
+  li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+  }
+
+   li a:hover {
+    text-decoration: none;
+    background: rgba(255,255,255,0.2);
+  }
+}
+
+/* -------------- Navbar --------------- */
+
+#header {
+  background-color: #D1B6E1;
+  height: 8%;
+
+  ul {
+    padding-top: 10px;
+  }
+}
+
+/* -------------- Main Content ----------------- */
+
+#main-content {
+  margin-top: 5%;
+}

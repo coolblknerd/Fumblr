@@ -1,0 +1,23 @@
+<div id="main">
+  <div id="main-header">
+    <nav class="navbar navbar-default navbar-fixed-top col-xs-10 col-xs-offset-2" id="header">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h3><%= link_to "Fumblr", root_path %></h3>
+        </div>
+        <ul class="nav nav-pills navbar-right">
+          <li><%= link_to "Create", new_post_path, class: "btn btn-primary" %></li>
+          <li><%= link_to "Log Out", root_path, class: "btn btn-primary" %></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="col-xs-10 col-xs-offset-2" id="main-content">
+    <% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert") %>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</div>
