@@ -3,7 +3,7 @@
     <nav class="navbar navbar-default navbar-fixed-top col-xs-10 col-xs-offset-2" id="header">
       <div class="container-fluid">
         <div class="navbar-header">
-          
+
           <% if current_page?(root_path) %>
           <h3><%= link_to "Fumblr", root_path %></h3>
           <% elsif current_page?(about_path) %>
@@ -13,10 +13,12 @@
           <% end %>
 
         </div>
+        <% if user_signed_in? %>
         <ul class="nav nav-pills navbar-right">
           <li><%= link_to "Create", new_post_path, class: "btn btn-primary" %></li>
-          <li><%= link_to "Log Out", root_path, class: "btn btn-primary" %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %></li>
         </ul>
+        <% end %>
       </div>
     </nav>
   </div>

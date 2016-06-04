@@ -1,7 +1,10 @@
 <h1><%= @post.title %></h1>
 
 <h5 id="date">
-  <%= time_ago_in_words(@post.created_at) %> ago... | <%= link_to "Edit", edit_post_path %> | <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?"} %>
+  <%= time_ago_in_words(@post.created_at) %> ago...
+  <% if user_signed_in? %>
+  | <%= link_to "Edit", edit_post_path %> | <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
 </h5>
 
 <p><%= @post.body %> </p>
