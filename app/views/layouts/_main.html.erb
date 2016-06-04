@@ -3,7 +3,15 @@
     <nav class="navbar navbar-default navbar-fixed-top col-xs-10 col-xs-offset-2" id="header">
       <div class="container-fluid">
         <div class="navbar-header">
+          
+          <% if current_page?(root_path) %>
           <h3><%= link_to "Fumblr", root_path %></h3>
+          <% elsif current_page?(about_path) %>
+          <h3>My Site</h3>
+          <% else %>
+          <h3><%= link_to "Back to Post Feed", root_path %></h3>
+          <% end %>
+
         </div>
         <ul class="nav nav-pills navbar-right">
           <li><%= link_to "Create", new_post_path, class: "btn btn-primary" %></li>
