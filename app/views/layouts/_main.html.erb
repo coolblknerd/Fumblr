@@ -7,7 +7,7 @@
           <% if current_page?(root_path) %>
           <h3><%= link_to "Fumblr", root_path %></h3>
           <% elsif current_page?(about_path) %>
-          <h3>My Site</h3>
+          <h3><%= link_to "My Site", root_path %></h3>
           <% else %>
           <h3><%= link_to "Back to Post Feed", root_path %></h3>
           <% end %>
